@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love To Kanchi ❤️</title>
+
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="gf.css">
+    <script src="scriptbackend.js" defer></script>
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- FLOATING HEARTS -->
+    <div class="hearts-bg" id="heartsBg"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <h1 class="hero-title">
+            Love To Kanchi 🌹❤️
+        </h1>
+
+        <p class="hero-quote">
+            "From the moment we first talked, you've been in my heart —
+            your smile, your elegance, and every moment with you feels magical ✨"
+        </p>
+
+        <!-- PHOTO GALLERY -->
+        <div class="gallery">
+
+            <div class="card">
+                <img src="love/rose.jpg">
+                <h2>Cuter 💕</h2>
+            </div>
+
+            <div class="card">
+                <img src="love/rose1.jpg">
+                <h2>Beautiful 🌸</h2>
+            </div>
+
+            <div class="card">
+                <img src="love/rose2.jpg">
+                <h2>Princess 👑</h2>
+            </div>
+
+            <div class="card">
+                <img src="love/rose4.jpg">
+                <h2>My Happiness ❤️</h2>
+            </div>
+
+            <div class="card">
+                <img src="love/rose5.jpg">
+                <h2>Perfect Smile ✨</h2>
+            </div>
+
+            <div class="card">
+                <img src="love/smile.jpg">
+                <h2>My World 🌍</h2>
+            </div>
+
+        </div>
+
+        <!-- LOVE TEXT -->
+        <div class="love-box">
+
+            <h2>
+                Will You Be My Girlfriend? 💍
+            </h2>
+
+            <p>
+                I like you, and I truly have feelings for you.
+                Every moment with you feels special ❤️
+            </p>
+
+            <div class="buttons">
+
+                <button class="yes-btn" onclick="showModal()">
+                    Yes ❤️
+                </button>
+
+                <button class="nobtn" id="nobtn">
+                    No 😢
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SECOND SECTION -->
+    <section class="second-section">
+
+        <div class="second-box">
+
+            <h1>Forever With You 🌹</h1>
+
+            <p>
+                I don’t want just a moment with you...
+                I want every tomorrow, every smile,
+                every memory together 💖
+            </p>
+
+            <img src="love/pintrelove.jpg">
+
+        </div>
+
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal">
+
+        <div class="modal-box">
+
+            <span class="emoji">💍❤️🎉</span>
+
+            <h1>She Said YES ❤️</h1>
+
+            <p>
+                My heart is yours forever 🌹
+            </p>
+
+            <button onclick="closeModal()">
+                Close ✨
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // Floating Hearts
+        const heartsBg = document.getElementById('heartsBg');
+
+        const hearts = ['❤️','💖','💕','🌸','✨'];
+
+        function createHeart(){
+
+            const heart = document.createElement('div');
+
+            heart.classList.add('heart');
+
+            heart.innerHTML =
+            hearts[Math.floor(Math.random() * hearts.length)];
+
+            heart.style.left = Math.random() * 100 + 'vw';
+
+            heart.style.animationDuration =
+            5 + Math.random() * 5 + 's';
+
+            heartsBg.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            },10000);
+        }
+
+        setInterval(createHeart,500);
+
+        // MODAL
+        function showModal(){
+            document.getElementById('modal')
+            .classList.add('show');
+        }
+
+        function closeModal(){
+            document.getElementById('modal')
+            .classList.remove('show');
+        }
+
+    </script>
+
+</body>
+</html>

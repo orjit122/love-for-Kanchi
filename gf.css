@@ -1,0 +1,415 @@
+//for willubmtgy
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    background:
+    linear-gradient(135deg,#7ee8fa,#1a50c8,#0a1460);
+
+    overflow-x: hidden;
+
+    color: white;
+}
+
+/* FLOATING HEARTS */
+.hearts-bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.heart{
+    position: absolute;
+    bottom: -50px;
+
+    font-size: 30px;
+
+    animation: float 8s linear infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    20%{
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+/* HERO */
+.hero{
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-title{
+    font-size: 80px;
+
+    font-family: 'Dancing Script', cursive;
+
+    color: #ffd6e7;
+
+    text-shadow: 0 0 20px rgba(255,255,255,0.7);
+
+    animation: glow 2s infinite alternate;
+}
+
+.hero-quote{
+    max-width: 800px;
+
+    margin: 25px auto;
+
+    font-size: 25px;
+
+    line-height: 1.8;
+
+    font-family: 'Playfair Display', serif;
+
+    background: rgba(255,255,255,0.12);
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* GALLERY */
+.gallery{
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 35px;
+}
+
+.card{
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 25px;
+
+    padding: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+    transition: 0.4s ease;
+}
+
+.card:hover{
+    transform: translateY(-12px) scale(1.03);
+}
+
+.card img{
+    width: 100%;
+    height: 320px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 4px solid white;
+
+    transition: 0.4s ease;
+}
+
+.card:hover img{
+    transform: scale(1.04);
+}
+
+.card h2{
+    margin-top: 15px;
+
+    font-size: 32px;
+
+    font-family: 'Dancing Script', cursive;
+
+    color: #fff0f5;
+}
+
+/* LOVE BOX */
+.love-box{
+    margin: 80px auto 0;
+
+    max-width: 900px;
+
+    padding: 50px;
+
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 30px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+}
+
+.love-box h2{
+    font-size: 65px;
+
+    font-family: 'Dancing Script', cursive;
+
+    color: #ffd6e7;
+}
+
+.love-box p{
+    margin-top: 20px;
+
+    font-size: 28px;
+
+    line-height: 1.8;
+}
+
+/* BUTTONS */
+.buttons{
+    margin-top: 35px;
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.yes-btn,
+.nobtn{
+    padding: 16px 45px;
+
+    border: none;
+    border-radius: 50px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.yes-btn{
+    background: linear-gradient(to right,#ff4d88,#ff85a2);
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+.nobtn{
+    background: white;
+    color: #ff4d88;
+}
+
+.yes-btn:hover,
+.nobtn:hover{
+    transform: scale(1.08);
+}
+
+/* SECOND SECTION */
+.second-section{
+    padding: 80px 20px;
+}
+
+.second-box{
+    max-width: 1100px;
+
+    margin: auto;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.12);
+
+    padding: 50px;
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+}
+
+.second-box h1{
+    font-size: 70px;
+
+    font-family: 'Dancing Script', cursive;
+
+    color: #ffd6e7;
+}
+
+.second-box p{
+    margin-top: 20px;
+
+    font-size: 28px;
+
+    line-height: 1.8;
+}
+
+.second-box img{
+    margin-top: 35px;
+
+    width: 100%;
+    max-width: 700px;
+
+    border-radius: 25px;
+
+    border: 5px solid white;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+    transition: 0.4s ease;
+}
+
+.second-box img:hover{
+    transform: scale(1.03);
+}
+
+/* MODAL */
+.modal-overlay{
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.6);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.show{
+    display: flex;
+}
+
+.modal-box{
+    width: 90%;
+    max-width: 450px;
+
+    background: white;
+
+    color: black;
+
+    padding: 50px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    animation: popup 0.4s ease;
+}
+
+@keyframes popup{
+
+    from{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.emoji{
+    font-size: 60px;
+}
+
+.modal-box h1{
+    margin-top: 20px;
+
+    font-size: 50px;
+
+    color: #ff4d88;
+
+    font-family: 'Dancing Script', cursive;
+}
+
+.modal-box p{
+    margin-top: 15px;
+
+    font-size: 22px;
+}
+
+.modal-box button{
+    margin-top: 25px;
+
+    padding: 14px 35px;
+
+    border: none;
+    border-radius: 40px;
+
+    background: #ff4d88;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+/* GLOW */
+@keyframes glow{
+
+    from{
+        text-shadow:
+        0 0 10px #ff4d88,
+        0 0 20px #ff4d88;
+    }
+
+    to{
+        text-shadow:
+        0 0 20px #ff99bb,
+        0 0 40px #ff99bb;
+    }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .hero-title{
+        font-size: 55px;
+    }
+
+    .hero-quote{
+        font-size: 20px;
+    }
+
+    .love-box h2{
+        font-size: 45px;
+    }
+
+    .love-box p{
+        font-size: 22px;
+    }
+
+    .second-box h1{
+        font-size: 50px;
+    }
+
+    .second-box p{
+        font-size: 22px;
+    }
+}
